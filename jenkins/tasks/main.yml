@@ -1,0 +1,9 @@
+---
+# tasks file for jenkins
+- vars:
+    install_docker : true
+
+
+- include: install.yml
+  when: install_docker == true
+   

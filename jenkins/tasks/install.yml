@@ -1,0 +1,18 @@
+---
+- name: Install Docker
+  yum:  name="{{ item }}" state=present
+  with_items:
+   - dcoker
+   - epel-release
+   - docker-io
+  register: docker_install
+  when: insall_docker == true
+  notify: Restart Docker
+- debug: var=docker_install verbosity=2
+
+- name: check status of Docker 
+  shell: systemctl status docker
+  register: docker_status
+  changed_when: false
+  failed_when: false
+- debug: msg="{{ docker_status.stdout_lines }}"
