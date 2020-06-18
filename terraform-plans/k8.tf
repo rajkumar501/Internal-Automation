@@ -66,7 +66,7 @@ resource "azurerm_kubernetes_cluster" "enterprise" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                     = "containerRegistry1"
+  name                     = "containerRegistryEnterprise"
   resource_group_name      = azurerm_resource_group.k8s.name
   location                 = azurerm_resource_group.k8s.location
   sku                      = "Premium"
