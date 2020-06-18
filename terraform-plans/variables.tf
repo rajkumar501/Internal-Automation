@@ -10,11 +10,11 @@ variable "ssh_public_key" {
 }
 
 variable "dns_prefix" {
-    default = "k8stest"
+    default = "enterprise"
 }
 
 variable cluster_name {
-    default = "k8stest"
+    default = "enterprise"
 }
 
 variable resource_group_name {
