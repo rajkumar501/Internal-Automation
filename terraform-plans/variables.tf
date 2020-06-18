@@ -6,7 +6,7 @@ variable "agent_count" {
 }
 
 variable "ssh_public_key" {
-    default = "${JENKINS_AGENT_WORKDIR}/.ssh/id_rsa.pub"
+    default = "/home/jenkins/agent/.ssh/id_rsa.pub"
 }
 
 variable "dns_prefix" {
