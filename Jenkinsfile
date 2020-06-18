@@ -4,6 +4,7 @@
 
          stages {
          stage('Init parameters'){
+            steps{ 
             container('terraform-az') {
                 // Get SSH public for the VMSS from Jenkins
                 withCredentials([sshUserPrivateKey(credentialsId: 'ssh_key_user', keyFileVariable: 'PUBLICKEY')]) {
@@ -11,15 +12,19 @@
                         mkdir /home/jenkins/.ssh
                         cat $PUBLICKEY >/home/jenkins/.ssh/id_rsa.pub
                         """
-                    }     
+                }
+              }     
             }
          stage('Checkout'){
+            steps{ 
             container('terraform-az') {
                 // Get the terraform plan
                 checkout scm    
             }
         }
+         }
         stage('Terraform init'){
+            steps{ 
             container('terraform-az') {
                 // Initialize the plan 
                 sh  """
@@ -28,7 +33,9 @@
                    """
             }
         }
+        }
         stage('Terraform plan'){
+            steps{ 
             container('terraform-az') {  
                 
                 sh  '''
@@ -39,7 +46,7 @@
                      
             }
         }
-        
+        }
         stage('Approval') {
                 steps {
                     script {
@@ -49,6 +56,7 @@
             }
 
         stage('Terraform apply'){
+         steps{ 
             container('terraform-az') {
                 // Apply the plan
                 sh  """  
@@ -57,6 +65,7 @@
                    """
             }
         }
-         }     
+         }
+         }
     
     }
