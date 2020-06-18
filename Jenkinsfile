@@ -1,6 +1,3 @@
- 
-{   
-
     pipeline{
 
          agent any
@@ -61,5 +58,5 @@
             }
         }
          
-}
+
 
