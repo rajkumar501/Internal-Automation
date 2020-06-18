@@ -9,8 +9,8 @@
                 // Get SSH public for the VMSS from Jenkins
                 withCredentials([sshUserPrivateKey(credentialsId: 'ssh_key_user', keyFileVariable: 'PUBLICKEY')]) {
                         sh  """
-                        mkdir /.ssh
-                        cat $PUBLICKEY > /.ssh/id_rsa.pub
+                        mkdir ./.ssh
+                        cat $PUBLICKEY > ./.ssh/id_rsa.pub
                         """
                 }
               }    
