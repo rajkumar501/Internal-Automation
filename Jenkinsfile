@@ -10,8 +10,8 @@
                 // Get SSH public for the VMSS from Jenkins
                 withCredentials([sshUserPrivateKey(credentialsId: 'ssh_key_user', keyFileVariable: 'PUBLICKEY')]) {
                         sh  """
-                        mkdir ./.ssh
-                        cat $PUBLICKEY > ./.ssh/id_rsa.pub
+                        mkdir $JENKINS_AGENT_WORKDIR/.ssh
+                        cat $PUBLICKEY > JENKINS_AGENT_WORKDIR/.ssh/id_rsa.pub
                         """
                 }
               }    
@@ -30,7 +30,7 @@
             container('terraform-az') {
                 // Initialize the plan 
                 sh  """
-                    cd terraform/
+                    cd terraform-plans/
                     terraform init -input=false
                    """
             }
