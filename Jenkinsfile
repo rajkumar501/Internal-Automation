@@ -13,7 +13,8 @@
                         cat $PUBLICKEY >/home/jenkins/.ssh/id_rsa.pub
                         """
                 }
-              }     
+              }    
+            } 
             }
          stage('Checkout'){
             steps{ 
