@@ -2,7 +2,7 @@
 
 resource "azurerm_container_registry" "acr" {
   name                     = "acrEnterpriseRegistry"
-  resource_group_name      = "k8"
+  resource_group_name      = "azure-k8stest"
   location                 = "Central US"
   sku                      = "Premium"
   admin_enabled            = false
