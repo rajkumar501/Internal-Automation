@@ -1,6 +1,6 @@
 Compare_images.py will be executed to compare the image differences using CSV file input, following are the steps for environmnet setup:
 
-Required Python version : Python3+
+Required Python version : Python3.7.7
 Platforms compatible: Windows / MACOS / Linux
 
 Install Dependencies:
