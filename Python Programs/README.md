@@ -5,7 +5,7 @@ Platforms compatible: Windows / MACOS / Linux
 
 Install Dependencies:
 
-$ pip3 install requirements.txt
+$ pip3 install -r requirements.txt
 
 Samples:
 
