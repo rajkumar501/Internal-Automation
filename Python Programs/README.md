@@ -22,6 +22,7 @@ $ python3 compare_images.py -h
     -h, --help            show this help message and exit
     -f FILE_PATH, --file-path FILE_PATH
                         Please provide the full path to the csv file
+                        
 $ python3 compare_images.py  -f <file_path_csv>
 
 Output:
