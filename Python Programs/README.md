@@ -14,6 +14,7 @@ Samples of Images are given in Images/ to try in sample images.csv file
 Usage:
 
 $ cd <path-to-the-script>
+  
 $ python3 compare_images.py -h 
   usage: compare_images.py [-h] -f FILE_PATH
 
