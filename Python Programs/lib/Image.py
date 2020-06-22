@@ -17,7 +17,7 @@ class ImageDiff:
             b, g, r = self.cv_obj.split(difference)
             if self.cv_obj.countNonZero(b) == 0 and self.cv_obj.countNonZero(g) == 0 and self.cv_obj.countNonZero(r) == 0:
                 print("The images are completely Equal")
-                return 0 
+                return 0    
             else:
                 print("The images are NOT equal")
         else:
@@ -51,8 +51,8 @@ class ImageDiff:
             number_keypoints = len(kp_2)
 
 
-        print("Keypoints 1ST Image: " + str(len(kp_1)))
-        print("Keypoints 2ND Image: " + str(len(kp_2)))
+        # print("Keypoints 1ST Image: " + str(len(kp_1)))
+        # print("Keypoints 2ND Image: " + str(len(kp_2)))
         print("GOOD Matches:", len(good_points))
         print("How good it's the match: ", len(good_points) / number_keypoints * 100)
 

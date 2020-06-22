@@ -5,13 +5,16 @@ from lib.Image import ImageDiff
 import argparse
 import cv2 
 from timeit import default_timer as timer
+import os
+from sys import platform
+import sys 
 
 
 #Create Argument parser object
 parser = argparse.ArgumentParser()
+
 #Create argument for program
 parser.add_argument('-f', '--file-path', help="Please provide the full path to the csv file", required=True)
-
 
 
 #Variables
@@ -24,25 +27,31 @@ dict_csv = []
 csv_columns = ['image1', 'image2', 'similar', 'elapsed in sec']
 csv_out_file = "result.csv"
 
+
+#Open CSV file to iterate over the image paths
+
 with open(csv_file, 'r') as read_obj:
     csv_reader = DictReader(read_obj)
     #Ignores first line of headers
     # next(csv_reader)
     start = timer ()
     for row in csv_reader:
-        print("Image1:",row['Image1'],"\n","Image2:",row['Image2'])
-        bool_check = image_inst.check_equal(row['Image1'],row['Image2'])
-        similarity = image_inst.check_similarity_percent(row['Image1'],row['Image2'])
-        end = timer ()
-        time_elapsed = round((end - start),2)
-        if( similarity == 100):
-            similar_check = 0
-        elif (similarity == 0):
-            similar_check = 1
+        if os.path.isfile(row['Image1']) and os.path.isfile(row['Image2']) :
+            print("Image1:",row['Image1'],"\n","Image2:",row['Image2'])
+            bool_check = image_inst.check_equal(row['Image1'],row['Image2'])
+            similarity = image_inst.check_similarity_percent(row['Image1'],row['Image2'])
+            end = timer ()
+            time_elapsed = round((end - start),2)
+            if( similarity == 100):
+                similar_check = 0
+            elif (similarity == 0):
+                similar_check = 1
+            else:
+                similar_check = (100-similarity)/100
+            line = {"image1":row['Image1'],"image2":row['Image2'],"similar":similar_check,"elapsed in sec":time_elapsed}
+            dict_csv.append(line)
         else:
-            similar_check = (100-similarity)/100
-        line = {"image1":row['Image1'],"image2":row['Image2'],"similar":similar_check,"elapsed in sec":time_elapsed}
-        dict_csv.append(line)
+            print('[ERROR] - Please check path exists for following files \n',row['Image1'],'\n',row['Image2'])
     
 cv_obj.waitKey(0)
 cv_obj.destroyAllWindows()
@@ -57,4 +66,5 @@ try:
 except IOError:
     print("I/O error")
 
-
+if (platform == "win32"):
+    sys.exit()

@@ -1,8 +1,8 @@
 image1,image2,similar,elapsed in sec
-./Images/original_golden_bridge.jpg,./Images/original_golden_bridge.jpg,0,4.25
-./Images/blue_filter.jpg,./Images/george-washington-bridge.jpg,1,11.7
-./Images/duplicate.jpg,./Images/cntower.png,1,12.88
-./Images/different-golden-gate-bridge.jpg,./Images/textured.jpg,1,19.31
-./Images/original_golden_bridge.jpg,./Images/different-golden-gate-bridge.jpg,1,23.96
-./Images/original_golden_bridge.jpg,./Images/sharpened.jpg,0.53,30.53
-./Images/original_golden_bridge.jpg,./Images/old_photo.jpg,0.64,35.68
+./Images/original_golden_bridge.jpg,./Images/original_golden_bridge.jpg,0,4.3
+./Images/blue_filter.jpg,./Images/george-washington-bridge.jpg,1,12.27
+./Images/duplicate.jpg,./Images/cntower.png,1,13.43
+./Images/different-golden-gate-bridge.jpg,./Images/textured.jpg,1,19.78
+./Images/original_golden_bridge.jpg,./Images/different-golden-gate-bridge.jpg,1,24.73
+./Images/original_golden_bridge.jpg,./Images/sharpened.jpg,0.53,31.43
+./Images/original_golden_bridge.jpg,./Images/old_photo.jpg,0.64,37.17
