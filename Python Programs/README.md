@@ -8,7 +8,6 @@ Compare the Images for visual similarity
 ```
 git clone https://github.com/rajkumar501/Internal-Automation.git
 git checkout develop
-
 ```
 
 
