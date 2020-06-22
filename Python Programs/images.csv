@@ -1,0 +1,8 @@
+Image1,Image2
+./Images/original_golden_bridge.jpg,./Images/original_golden_bridge.jpg
+./Images/blue_filter.jpg,./Images/george-washington-bridge.jpg
+./Images/duplicate.jpg,./Images/cntower.png
+./Images/different-golden-gate-bridge.jpg,./Images/textured.jpg
+./Images/original_golden_bridge.jpg,./Images/different-golden-gate-bridge.jpg
+./Images/original_golden_bridge.jpg,./Images/sharpened.jpg
+./Images/original_golden_bridge.jpg,./Images/old_photo.jpg
