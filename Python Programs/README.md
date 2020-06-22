@@ -60,6 +60,11 @@ $ result.csv
 
 ```
 
+### Similarity Scale
+
+###### (Similar) 0 - 1 (Not similar)
+
+ex. 0.23 is more similar than 0.50 which is more near to value 1 
 
 ## Versioning
 version 1.0.0
