@@ -1,20 +1,41 @@
-Compare_images.py will be executed to compare the image differences using CSV file input, following are the steps for environmnet setup:
+# Compare Images for similarity
 
-Required Python version : Python3.7.7
-Platforms compatible: Windows / MACOS / Linux
+Compare the Images for visual similarity
 
-Install Dependencies:
+## Getting Started
 
+#### Clone the repository
+```
+git clone https://github.com/rajkumar501/Internal-Automation.git
+git checkout develop
+
+```
+
+
+### Prerequisites
+
+#### Required Version : Python 3.6+ , Python 3.7.7 is best recommended version to use
+
+```
 $ pip3 install -r requirements.txt
+```
 
-Samples:
+#### Prepare the CSV file as in sample provided 
+```
+$ ./image.csv
+```
+##### Take Images from any path but for testing can also the sample images in folder
 
-Samples of Images are given in Images/ to try in sample images.csv file 
+```
+$ Images/
+```
 
-Usage:
+### Running the Util
 
-$ cd <path-to-the-script>
-  
+
+Check usage using -h option
+
+```
 $ python3 compare_images.py -h 
   usage: compare_images.py [-h] -f FILE_PATH
 
@@ -22,12 +43,40 @@ $ python3 compare_images.py -h
     -h, --help            show this help message and exit
     -f FILE_PATH, --file-path FILE_PATH
                         Please provide the full path to the csv file
-                        
+```
+
+Run the util as follows :
+
+```
 $ python3 compare_images.py  -f <file_path_csv>
 
-Output:
+```
 
-Output's result.csv in same folder with required comparision analysis
+## Output
+
+Expected output will be result.csv file as in sample in the project folder
+
+```
+$ result.csv
+
+```
+
+
+## Versioning
+version 1.0.0
+
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
+
+
+
+
+
+
 
 
 
