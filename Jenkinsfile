@@ -71,7 +71,7 @@
                 container('terraform-az'){
                     sh """
                         cd terraform-plans/
-                        terraform destroy
+                        terraform destroy -force 
                         """
                 }
 
