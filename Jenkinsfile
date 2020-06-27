@@ -65,18 +65,18 @@
         }
          }
 
-        stage('Destroy Environment'){
+        // stage('Destroy Environment'){
 
-            steps{
-                container('terraform-az'){
-                    sh """
-                        cd terraform-plans/
-                        terraform destroy -force 
-                        """
-                }
+        //     steps{
+        //         container('terraform-az'){
+        //             sh """
+        //                 cd terraform-plans/
+        //                 terraform destroy -force 
+        //                 """
+        //         }
 
-            }
-        }
+        //     }
+        // }
          }
 
     
