@@ -64,6 +64,19 @@
             }
         }
          }
+
+        stage('Destroy Environment'){
+
+            steps{
+                container('terraform-az'){
+                    sh """
+                        cd terraform-plans/
+                        terraform destroy
+                        """
+                }
+
+            }
+        }
          }
 
     
