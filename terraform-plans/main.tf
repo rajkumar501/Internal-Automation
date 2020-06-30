@@ -9,8 +9,8 @@ terraform {
     backend "azurerm" {
     storage_account_name = "cs21003200097e7da8f"
     container_name       = "tfstate"
-    key                  = "codelab.microsoft.tfstate"
-    access_key = "5lHustFKLMpvjz6X4VFF+TEkyQWm5Y8n+zI7jbBogCT0WzVA0sS/QYO3rYDW1XhPv6NyYfg8pWz4jG8Q/ByB+w=="
+    key                  = ""
+    access_key = ""
 
       }
     }
