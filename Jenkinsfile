@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent{
+        kubernetes{
+            label 'jenkins-jenkins-slave'
+            defaultContainer 'terraform-az'
+        }
+    }
 
     stages {
         stage('Build') {
