@@ -3,20 +3,7 @@
 
          agent any
 
-         stages {
-         stage('Init parameters'){
-            steps{ 
-            container('terraform-az') {
-                // Get SSH public for the VMSS from Jenkins
-                withCredentials([sshUserPrivateKey(credentialsId: 'ssh_key_user', keyFileVariable: 'PUBLICKEY')]) {
-                        sh  """
-                        mkdir $JENKINS_AGENT_WORKDIR/.ssh
-                        cat $PUBLICKEY > $JENKINS_AGENT_WORKDIR/.ssh/id_rsa.pub
-                        """
-                }
-              }    
-            } 
-            }
+        stages {
          stage('Checkout'){
             steps{ 
             container('terraform-az') {
