@@ -1,8 +1,12 @@
 
     pipeline{
 
-         agent any
-
+        agent {
+            kubernetes{
+            label 'default'
+            }   
+        }
+   
         stages {
          stage('Checkout'){
             steps{ 
