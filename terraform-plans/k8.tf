@@ -47,8 +47,8 @@ resource "azurerm_kubernetes_cluster" "enterprise" {
         node_count      = var.agent_count
         vm_size         = "Standard_DS2_v2"
         enable_auto_scaling  = "true"
-        min_count = "2"
-        max_count = "4"
+        min_count = "1"
+        max_count = "5"
     }
 
     service_principal {
