@@ -43,7 +43,7 @@ resource "azurerm_kubernetes_cluster" "enterprise" {
     }
 
     default_node_pool {
-        name            = "default-agentpool"
+        name            = "defaultpool"
         node_count      = var.agent_count
         vm_size         = "Standard_DS2_v2"
         enable_auto_scaling  = "true"
