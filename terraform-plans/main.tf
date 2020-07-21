@@ -7,11 +7,11 @@ provider "azurerm" {
 
 terraform {
     backend "azurerm" {
-    storage_account_name = "cs21003200097e7da8f"
-    container_name       = "tfstate"
-    key                  = ""
-    access_key = ""
-
-      }
+    
+    	resource_group_name		= "rg-aks-test"
+		  storage_account_name	= "saaks"
+	  	container_name			= "tf-state"
+		  key						= "rg-aks-test.tfstate"
+    
     }
-  
+}

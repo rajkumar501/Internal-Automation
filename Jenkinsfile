@@ -1,16 +1,21 @@
 
     pipeline{
+        agent{
+        kubernetes{
+        label 'terraform-agent'
+        }
+        }
+        environment{
 
-        agent {
-            kubernetes{
-            label 'default'
-            }   
+            ARM_ACCESS_KEY = credential('arm_Access_key')
+            TF_VAR_client_id = credential('tenant_id')
+            TF_VAR_client_secret = credential('client_secret') 
         }
    
         stages {
          stage('Checkout'){
             steps{ 
-            container('terraform-az') {
+            container('terraform') {
                 // Get the terraform plan
                 checkout scm    
             }
@@ -18,7 +23,7 @@
          }
         stage('Terraform init'){
             steps{ 
-            container('terraform-az') {
+            container('terraform') {
                 // Initialize the plan 
                 sh  """
                     cd terraform-plans/
@@ -29,7 +34,7 @@
         }
         stage('Terraform plan'){
             steps{ 
-            container('terraform-az') {  
+            container('terraform') {  
                 
                 sh (script:"cd terraform-plans/ && terraform plan -out=tfplan")
                      
@@ -46,7 +51,7 @@
 
         stage('Terraform apply'){
          steps{ 
-            container('terraform-az') {
+            container('terraform') {
                 // Apply the plan
                 sh  """  
                     cd terraform-plans/
@@ -56,18 +61,20 @@
         }
          }
 
-        stage('Destroy Environment'){
+        // stage('Destroy Environment'){
+        //     when{
+        //         para
+        //     }
+        //     steps{
+        //         container('terraform'){
+        //             sh """
+        //                 cd terraform-plans/
+        //                 terraform destroy -force 
+        //                 """
+        //         }
 
-            steps{
-                container('terraform-az'){
-                    sh """
-                        cd terraform-plans/
-                        terraform destroy -force 
-                        """
-                }
-
-            }
-        }
+        //     }
+        // }
          }
 
     
