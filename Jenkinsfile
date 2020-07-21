@@ -27,6 +27,13 @@
             steps{ 
             container('terraform') {
                 // Initialize the plan 
+
+                withCredentials([sshUserPrivateKey(credentialsId: 'ssh_user_ket', keyFileVariable: 'PUBLIC_KEY')]) {
+                        sh  """
+                        mkdir /home/jenkins/.ssh
+                        cat $PUBLICKEY >/home/jenkins/.ssh/id_rsa.pub
+                        """
+                    }   
                 sh  """
                     az login --service-principal -u $ARM_CLIENT_ID  -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
                     cd terraform-plans/
