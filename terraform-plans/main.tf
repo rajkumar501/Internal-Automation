@@ -10,7 +10,7 @@ terraform {
     
     	resource_group_name		= "rg-aks-test"
 		  storage_account_name	= "saaks"
-	  	container_name			= "tf-state"
+	  	container_name			= "tfstate"
 		  key						= "rg-aks-test.tfstate"
     
     }
