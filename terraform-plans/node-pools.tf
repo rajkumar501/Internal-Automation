@@ -1,7 +1,7 @@
 
 resource "azurerm_kubernetes_cluster_node_pool" "firstpool" {
   name                  = "internal"
-  kubernetes_cluster_id = azurerm_kubernetes_cluster.firstpool.id
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.enterprise.id
   vm_size               = "Standard_DS2_v2"
   enable_auto_scaling  = "true"
   min_count = "2"
@@ -14,7 +14,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "firstpool" {
 
 resource "azurerm_kubernetes_cluster_node_pool" "secondpool" {
   name                  = "internal"
-  kubernetes_cluster_id = azurerm_kubernetes_cluster.secondpool.id
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.enterprise.id
   vm_size               = "Standard_DS2_v2"
   enable_auto_scaling  = "true"
   min_count = "2"
