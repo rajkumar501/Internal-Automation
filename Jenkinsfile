@@ -7,9 +7,9 @@
         }
         environment{
 
-            ARM_ACCESS_KEY = credential('arm_access_key')
-            TF_VAR_client_id = credential('tenant_id')
-            TF_VAR_client_secret = credential('client_secret') 
+            ARM_ACCESS_KEY = credentials('arm_access_key')
+            TF_VAR_client_id = credentials('tenant_id')
+            TF_VAR_client_secret = credentials('client_secret') 
         }
    
         stages {
