@@ -28,7 +28,7 @@
             container('terraform') {
                 // Initialize the plan 
 
-                withCredentials([sshUserPrivateKey(credentialsId: 'ssh_user_key', keyFileVariable: 'PUBLIC_KEY')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'ssh_user_key', keyFileVariable: 'PUBLICKEY')]) {
                         sh  """
                         mkdir $JENKINS_AGENT_WORKDIR/.ssh
                         cat $PUBLICKEY > $JENKINS_AGENT_WORKDIR/.ssh/id_rsa.pub
