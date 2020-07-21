@@ -30,8 +30,8 @@
 
                 withCredentials([sshUserPrivateKey(credentialsId: 'ssh_user_key', keyFileVariable: 'PUBLIC_KEY')]) {
                         sh  """
-                        mkdir /home/jenkins/.ssh
-                        cat $PUBLICKEY >/home/jenkins/.ssh/id_rsa.pub
+                        mkdir $JENKINS_AGENT_WORKDIR/.ssh
+                        cat $PUBLICKEY > $JENKINS_AGENT_WORKDIR/.ssh/id_rsa.pub
                         """
                     }   
                 sh  """
