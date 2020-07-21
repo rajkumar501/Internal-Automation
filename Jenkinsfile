@@ -39,8 +39,9 @@
                 sh  """
                     az login --service-principal -u $ARM_CLIENT_ID  -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
                     cd terraform-plans/
-                    terraform import azurerm_resource_group.k8s /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/rg-aks-test
+                    
                     terraform init -input=false
+                    terraform import azurerm_resource_group.k8s /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/rg-aks-test
                    """
             }
         }
