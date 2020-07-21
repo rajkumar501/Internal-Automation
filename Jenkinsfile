@@ -12,6 +12,8 @@
             ARM_CLIENT_SECRET = credentials('client_secret')
             ARM_TENANT_ID = credentials('tenant_id') 
             ARM_SUBSCRIPTION_ID = credentials('subscription_id')
+            TF_VAR_client_id = credentials('client_id')
+            TF_VAR_client_secret = credentials('client_secret')
         }
    
         stages {
