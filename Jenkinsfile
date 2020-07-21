@@ -1,4 +1,4 @@
-
+  
     pipeline{
         agent{
         kubernetes{
@@ -8,8 +8,9 @@
         environment{
 
             ARM_ACCESS_KEY = credentials('arm_access_key')
-            TF_VAR_client_id = credentials('tenant_id')
-            TF_VAR_client_secret = credentials('client_secret') 
+            TF_VAR_client_id = credentials('client_id')
+            TF_VAR_client_secret = credentials('client_secret')
+            TENANT_ID = credentials('tenant_id') 
         }
    
         stages {
@@ -26,6 +27,7 @@
             container('terraform') {
                 // Initialize the plan 
                 sh  """
+                    az login --service-principal -u $TF_VAR_client_id -p $TF_VAR_client_secret --tenant $TENANT_ID
                     cd terraform-plans/
                     terraform init -input=false
                    """
