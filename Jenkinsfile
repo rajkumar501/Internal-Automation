@@ -8,9 +8,10 @@
         environment{
 
             ARM_ACCESS_KEY = credentials('arm_access_key')
-            TF_VAR_client_id = credentials('client_id')
-            TF_VAR_client_secret = credentials('client_secret')
-            TENANT_ID = credentials('tenant_id') 
+            ARM_CLIENT_ID = credentials('client_id')
+            ARM_CLIENT_SECRET = credentials('client_secret')
+            ARM_TENANT_ID = credentials('tenant_id') 
+            // ARM_SUBSCRIPTION_ID = credentials()
         }
    
         stages {
@@ -27,7 +28,7 @@
             container('terraform') {
                 // Initialize the plan 
                 sh  """
-                    az login --service-principal -u $TF_VAR_client_id -p $TF_VAR_client_secret --tenant $TENANT_ID
+                    az login --service-principal -u $ARM_CLIENT_ID  -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
                     cd terraform-plans/
                     terraform init -input=false
                    """
