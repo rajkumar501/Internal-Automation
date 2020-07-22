@@ -47,10 +47,10 @@
                     cd terraform-plans/
                     
                     terraform init -input=false
-                    terraform import azurerm_resource_group.k8s /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/rg-aks-test
                     
                    """
-                   // 
+                   //                     terraform import azurerm_resource_group.k8s /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/rg-aks-test
+
             }
         }
         }
