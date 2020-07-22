@@ -1,5 +1,6 @@
 
-
+data "azurerm_subnet" "aks_subnet"{
+}
 
 resource "azurerm_kubernetes_cluster_node_pool" "firstpool" {
   name                  = "internal"
