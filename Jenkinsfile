@@ -30,10 +30,7 @@
         }
          }
         stage('Terraform init'){
-             when{
-                // Only say hello if a "greeting" is requested
-                expression { params.DestroyEnvironment == 'no' }
-            }
+      
             steps{ 
             
             container('terraform') {
