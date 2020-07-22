@@ -22,7 +22,7 @@ variable resource_group_name {
 }
 
 variable location {
-    default = "Canada East"
+    default = "US East"
 }
 
 variable log_analytics_workspace_name {
