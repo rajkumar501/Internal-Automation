@@ -33,7 +33,7 @@
             steps{ 
              when{
                 // Only say hello if a "greeting" is requested
-                expression { params.DestroyEnvironment == 'yes' }
+                expression { params.DestroyEnvironment == 'no' }
             }
             container('terraform') {
                 // Initialize the plan 
@@ -59,7 +59,7 @@
         stage('Terraform plan'){
              when{
                 // Only say hello if a "greeting" is requested
-                expression { params.DestroyEnvironment == 'yes' }
+                expression { params.DestroyEnvironment == 'no' }
             }
             steps{ 
             container('terraform') {  
