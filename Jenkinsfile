@@ -1,8 +1,7 @@
 pipeline {
     agent{
         kubernetes{
-            label 'jenkins-jenkins-slave'
-            defaultContainer 'terraform-az'
+           label 'terraform-agent'
         }
     }
 
