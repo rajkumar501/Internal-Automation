@@ -1,0 +1,13 @@
+databricks_test/*
+# ignore all terraform state files from all directories
+*.tfvars
+*.tfstate
+*.tfstate.*
+# ignore all terraform plan files from all directories
+*.tfplan
+# ignore all terraform lock files from all directories
+*.tf.lock.hcl
+# ignore specific md files and .txt files
+AWS_learning.md
+IAC*.md   
+Notes.txt

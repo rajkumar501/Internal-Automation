@@ -1,0 +1,10 @@
+
+2025-04-13T22:45:01Z [INFO]  [azurermrg] Starting Resource Group creation process.
+2025-04-13T22:45:02Z [DEBUG] [azurermrg] Resource Group name: "example-rg"
+2025-04-13T22:45:02Z [DEBUG] [azurermrg] Location: "East US"
+2025-04-13T22:45:03Z [INFO]  [azurermrg] Sending request to Azure API to create Resource Group.
+2025-04-13T22:45:05Z [INFO]  [azurermrg] Resource Group "example-rg" created successfully.
+2025-04-13T22:45:06Z [INFO]  [azurermrg] Fetching details of Resource Group "example-rg".
+2025-04-13T22:45:07Z [DEBUG] [azurermrg] Retrieved Resource Group details: ID="/subscriptions/12345678-1234-1234-1234-1234567890ab/resourceGroups/example-rg"
+2025-04-13T22:45:08Z [INFO]  [azurermrg] Resource Group "example-rg" is in "Succeeded" state.
+2025-04-13T22:45:09Z [INFO]  [azurermrg] Resource Group creation process completed.
