@@ -1,0 +1,28 @@
+name: terraform-action
+on:
+  push:
+    branches:
+      - '*'
+ 
+env:
+  TF_LOG: INFO
+  TF_INPUT: false
+
+jobs: 
+  check-code:
+    runs-on: ubuntu-latest
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    # Set the working directory to vnet for the config files
+    defaults:
+        run:
+          shell: bash
+          working-directory: ./
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
+     # Install the selected version of Terraform CLI 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.3.2
